@@ -8,3 +8,5 @@ target_link_libraries(pico_w_project
 )
 
 pico_add_extra_outputs(pico_w_project)
+
+include_directories(${CMAKE_CURRENT_LIST_DIR})  # for lwipopts.h
