@@ -18,6 +18,7 @@ int main() {
         sleep_ms(500);
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
         sleep_ms(500);
+        printf("Blinking LED\n");
     }
 
     return 0;
