@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "name": "Pico W Project",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "${workspaceFolder}/lib/pico-sdk/src/boards/include",
+        "${workspaceFolder}/lib/pico-sdk/src/rp2040/hardware_regs/include",
+        "${workspaceFolder}/lib/pico-sdk/src/rp2_common/hardware_base/include",
+        "${workspaceFolder}/lib/pico-sdk/src/rp2_common/hardware_gpio/include",
+        "${workspaceFolder}/lib/pico-sdk/src/rp2_common/hardware_timer/include",
+        "${workspaceFolder}/lib/pico-sdk/lib/cyw43-driver/src",
+        "${workspaceFolder}/lib/pico-sdk/lib/lwip/src/include"
+      ],
+      "defines": [
+        "CYW43_ARCH_THREADSAFE_BACKGROUND",
+        "PICO_BOARD=pico_w",
+        "PICO_NO_BI_STDIO=0"
+      ],
+      "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-arm"
+    }
+  ],
+  "version": 4
+}
