@@ -7,11 +7,20 @@ INFO="\033[1;34m[INFO]\033[0m"
 OK="\033[1;32m[ OK ]\033[0m"
 ERR="\033[1;31m[FAIL]\033[0m"
 
-# Step 1: Find the UF2 file
-UF2_FILE=$(find build/ -name "*.uf2" | head -n 1)
+# Step 1: Resolve UF2 file path from folder name or default
+SEARCH_FOLDER="build/main"  # default folder
+if [ -n "$1" ]; then
+    SEARCH_FOLDER="build/$1"
+    echo -e "$INFO Searching in: $SEARCH_FOLDER"
+else
+    echo -e "$INFO No folder provided. Defaulting to: $SEARCH_FOLDER"
+fi
 
-if [ -z "$UF2_FILE" ]; then
-    echo -e "$ERR No .uf2 file found in build/. Please run ./compile.sh first."
+UF2_FILE=$(find "$SEARCH_FOLDER" -name "*.uf2" | head -n 1)
+
+if [ -z "$UF2_FILE" ] || [ ! -f "$UF2_FILE" ]; then
+    echo -e "$ERR No .uf2 file found in $SEARCH_FOLDER."
+    echo -e "$INFO Usage: ./flash.sh [relative_build_folder]  (e.g., ./flash.sh lib/pico-examples/blink)"
     exit 1
 fi
 

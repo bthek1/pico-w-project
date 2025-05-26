@@ -42,8 +42,9 @@ clean: ## Clean the build directory
 	rm -rf $(BUILD_DIR)
 
 ## 🚀 Flash & Terminal
-flash: ## Flash the compiled project to the Pico
-	./flash.sh
+flash: ## Flash the compiled project to the Pico eg. make flash name=lib/pico-examples/pico_w/wifi/mqtt
+	./flash.sh $(name)
+
 
 terminal: ## Open USB serial terminal via picocom
 	picocom -b $(BAUD) $(TTY)
