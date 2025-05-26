@@ -21,7 +21,6 @@ wifi_network_t networks[MAX_NETWORKS];
 int network_count = 0;
 volatile bool scan_done = false;
 
-
 int scan_result(void *env, const cyw43_ev_scan_result_t *result) {
     if (!result) {
         scan_done = true;

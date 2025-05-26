@@ -14,3 +14,4 @@ pico_enable_stdio_usb(pico_w_project 1)
 pico_enable_stdio_uart(pico_w_project 0)
 
 include_directories(${CMAKE_CURRENT_LIST_DIR})  # for lwipopts.h
+
